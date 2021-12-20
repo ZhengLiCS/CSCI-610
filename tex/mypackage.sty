@@ -1,0 +1,74 @@
+\NeedsTeXFormat{LaTeX2e}
+%\ProvidesPackage{mypackage}
+%[2011/01/11 v0.01 LaTeX package for my own purpose]
+
+%%% author ----------------------------------------
+\usepackage{authblk}
+
+%%% footnote --------------------------------------
+\newcommand\blfootnote[1]{
+  \begingroup
+  \unskip
+  \renewcommand\thefootnote{}\footnote{#1}
+  \addtocounter{footnote}{-1}
+  \endgroup
+}
+
+%%% float -----------------------------------------
+\usepackage{float}
+
+%%% math font -------------------------------------
+\RequirePackage{amsmath, amsfonts, amssymb,mathrsfs}
+\newcommand*\mathinhead[2]{\texorpdfstring{$\boldsymbol{#1}$}{#2}}
+% \usepackage{autobreak}
+%\newcommand\reducing[1]{\ensuremath{\sb{\scriptscriptstyle #1}}} % change the fontsize for some letter
+%\newcommand\increase[1]{\ensuremath{\sp{\scriptscriptstyle #1}}} % change the fontsize for some letter
+
+%%% table -----------------------------------------
+\usepackage{multirow}
+\usepackage{longtable}
+
+%%% figure draw -----------------------------------
+\usepackage{verbatim}
+\usepackage{epsfig}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{tikz,tikz-3dplot}
+\usetikzlibrary{matrix,arrows,calc,shapes} 
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for different line styles
+    help lines/.style={dashed, thick},
+    axis/.style={<->},
+    important line/.style={thick},
+    connection/.style={thick, dotted},
+}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+% %%% algorithm -------------------------------------
+% \usepackage{xcolor}
+% \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+% \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+% \SetCommentSty{mycommfont}
+% \SetKwInput{KwInput}{Require}                % Set the Input
+% \SetKwInput{KwOutput}{Output}              % set the Output
+
+%%% theorem----------------------------------------
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+
+%\def\hi{Hello, this is my own package}
+%\let\myDate\date
+%\newcommand\GoodBye[1][\bfseries]{{#1Good Bye}}
+\usepackage{subfig} % for subfigures
+\usepackage{caption}
+
+\endinput

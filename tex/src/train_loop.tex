@@ -1,0 +1,29 @@
+\documentclass[preview, border=3.14159]{standalone}
+
+%%% math font -------------------------------------
+\usepackage{amsmath, amsfonts, amssymb,mathrsfs}
+
+%%% algorithm -------------------------------------
+\usepackage[titlenumbered,ruled,vlined]{algorithm2e}
+\SetKwInput{KwInput}{Require}                % Set the Input
+
+
+\begin{document}
+
+\setcounter{algocf}{0}
+\begin{algorithm}[H]
+	\KwInput{Learning rate: $\alpha > 0$.}
+	\KwInput{Loss function $L(f(\boldsymbol{x}; \boldsymbol{\theta}), \boldsymbol{y}) = \| f(\boldsymbol{x}; \boldsymbol{\theta}) - \boldsymbol{y} \|$, the combination of norms.}
+	Initial parameters $\boldsymbol{\theta}$\;
+	\While{the loss function $L$ stop decrease}{
+		Sample a minibatch of $N$ examples from the training set $\{\boldsymbol{x}^{(1)}, \cdots,$ $\boldsymbol{x}^{(N)}\}$ with corresponding targets $\boldsymbol{y}^{(i)}$, such as $\boldsymbol{x}^{(i)} = (101010, T)$, $\boldsymbol{y}^{(i)} = (Q, \Sigma, \delta, q, F)$\;
+		Apply update: 
+		\begin{equation*}
+			\boldsymbol{\theta} \leftarrow \boldsymbol{\theta} - \alpha \frac{1}{N} \sum_{i=1}^N \nabla_{\boldsymbol{\theta}} L(f(\boldsymbol{x}^{(i)}; \boldsymbol{\theta}), \boldsymbol{y}^{(i)});
+		\end{equation*}
+	}
+	\caption{Train a model to generate NFA}
+\end{algorithm}
+
+
+\end{document}

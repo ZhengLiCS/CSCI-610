@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{peled1999black}
+Doron Peled, Moshe~Y Vardi, and Mihalis Yannakakis.
+\newblock Black box checking.
+\newblock In {\em Formal Methods for Protocol Engineering and Distributed
+  Systems}, pages 225--240. Springer, 1999.
+
+\bibitem{groce2002adaptive}
+Alex Groce, Doron Peled, and Mihalis Yannakakis.
+\newblock Adaptive model checking.
+\newblock In {\em International Conference on Tools and Algorithms for the
+  Construction and Analysis of Systems}, pages 357--370. Springer, 2002.
+
+\bibitem{cobleigh2003learning}
+Jamieson~M Cobleigh, Dimitra Giannakopoulou, and Corina~S
+  P{\u{a}}s{\u{a}}reanu.
+\newblock Learning assumptions for compositional verification.
+\newblock In {\em International Conference on Tools and Algorithms for the
+  Construction and Analysis of Systems}, pages 331--346. Springer, 2003.
+
+\bibitem{chaki2008verification}
+Sagar Chaki, Edmund Clarke, Natasha Sharygina, and Nishant Sinha.
+\newblock Verification of evolving software via component substitutability
+  analysis.
+\newblock {\em Formal Methods in System Design}, 32(3):235--266, 2008.
+
+\bibitem{pacharoen2013active}
+Warawoot Pacharoen, Toshiaki Aoki, Pattarasinee Bhattarakosol, and Athasit
+  Surarerks.
+\newblock Active learning of nondeterministic finite state machines.
+\newblock {\em Mathematical Problems in Engineering}, 2013, 2013.
+
+\bibitem{nerode1958linear}
+Anil Nerode.
+\newblock Linear automaton transformations.
+\newblock {\em Proceedings of the American Mathematical Society},
+  9(4):541--544, 1958.
+
+\bibitem{ho1995random}
+Tin~Kam Ho.
+\newblock Random decision forests.
+\newblock In {\em Proceedings of 3rd international conference on document
+  analysis and recognition}, volume~1, pages 278--282. IEEE, 1995.
+
+\bibitem{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep learning}.
+\newblock MIT press, 2016.
+
+\end{thebibliography}

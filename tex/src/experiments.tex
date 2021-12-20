@@ -1,0 +1,24 @@
+\documentclass[border=3.14159]{standalone}
+
+\RequirePackage{amsmath, amsfonts, amssymb,mathrsfs}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\begin{document}
+
+
+\begin{tabular}{lll|llllll}
+	\toprule
+	\multicolumn{3}{c|}{string} & \multicolumn{6}{c}{Accept/Reject vectors} \\ \hline
+	0 & 0 & 0 & F & F & F & F & F & $\cdots$ \\
+	0 & 0 & 1 & F & F & F & F & F & $\cdots$ \\
+	0 & 1 & 0 & F & F & F & F & F & $\cdots$ \\
+	0 & 1 & 1 & F & F & F & F & F & $\cdots$ \\
+	1 & 0 & 0 & F & F & F & F & F & $\cdots$ \\
+	1 & 0 & 1 & F & F & F & F & T & $\cdots$ \\
+	1 & 1 & 0 & F & F & T & T & F & $\cdots$ \\
+	1 & 1 & 1 & F & T & F & T & F & $\cdots$ \\
+	\bottomrule
+\end{tabular}
+
+\end{document}
