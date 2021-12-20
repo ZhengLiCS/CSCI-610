@@ -34,13 +34,14 @@
 \maketitle
 
 % \tableofcontents
-% \newpage
+\newpage
 
 % ==============================================================
 \begin{abstract}
     In the present paper, we introduce some related paper that works on reducing the automata structure of the black box by learning its inputs and outputs firstly. 
     By researching these papers,  we propose a novel method that can deduce an NFA with structure as simple as possible from the black box. The related program and the ideal is 100\% original. 
 \end{abstract}
+\newpage
 
 % ==============================================================
 \section{Introduction}
@@ -50,17 +51,9 @@ For instance, if we have permission to use a given software, but cannot view its
 
 However, such general problems are usually extremely difficult\cite{pacharoen2013active} so that we need to limit their range. Therefore, in the present paper, we discuss the method that can deduce an NFA with the simplest structure by learning the corresponding dataset. Fig. (\ref{fig: architecture}) demonstrates my idea, we can convert this problem to the typical question: \textbf{Generate the simplest automata that only accept a given series string.} If we require the automata to be a DFA, the question will be easy. However, such a solution may not be the best, because DFA usually has more finite states than its equivalent NFA. As we know, we can easily convert an NFA to a DFA by computing the closure, but hard to reduce the number of states by converting a DFA to an NFA. Although we can use the Myphill-Nerode Theorem\cite{nerode1958linear} to minimize DFA, we are going to explore the possibility of using machine learning methods. In addition, the program is open source \href{https://github.com/ZhengLiCS/CSCI-610}{\color{cyan}https://github.com/ZhengLiCS/CSCI-610}.
 
-\section{Description of the idea}
-As we mentioned before, we need to convert the problem into a string recognition problem. Fig.(\ref{fig: architecture}) shows the method, we each pair of input and output of the black box, we convert 
-them into a binary vector with fixed length respectively. The map should be a bijection, it implies that different input/output will match different binary vector.
-
-Assuming the input vector in the space $\{ 0, 1 \}^m$ and output vector in the space $\{ T, F \}^n$, then when the calculation process of the black box is equivalent to the recognition process of $2^n$ NFAs(each NFA ouput one component of the output vector). By enumerating all the inputs cases, we will obtain all recognized results, and all the NFAs will be certain. Therefore the example in the dataset consists of two parts, the input binary string and ouput binary vector, the corresponding target is the certained NFAs.
-
-So far we have the dataset, then consider training a model that can output a series of NFAs when inputting a pair of binary string and vector. If the cardinality $2^n$ is not very large, the Random Forest\cite{ho1995random} should be the best model, because it can predict results precisely. If the cardinality $2^n$ is extremely large, the Deep Neural Network\cite{goodfellow2016deep} should be the best model, because it can process the high-dimensional features.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{src/architecture.pdf}
+    \includegraphics[width=0.75\linewidth]{src/architecture.pdf}
     \caption{
         \protect\tikz\protect\node[draw, fill=red!50, opacity=0.2] at (0, 0) { }; Software,
         \protect\tikz\protect\node[draw, fill=blue!50, opacity=0.2] at (0, 0) { }; Examples in dataset,
@@ -69,6 +62,14 @@ So far we have the dataset, then consider training a model that can output a ser
     \label{fig: architecture}
 \end{figure}
 
+\section{Description of the idea}
+As we mentioned before, we need to convert the problem into a string recognition problem. Fig.(\ref{fig: architecture}) shows the method, we each pair of input and output of the black box, we convert 
+them into a binary vector with fixed length respectively. The map should be a bijection, it implies that different input/output will match different binary vector.
+
+Assuming the input vector in the space $\{ 0, 1 \}^m$ and output vector in the space $\{ T, F \}^n$, then when the calculation process of the black box is equivalent to the recognition process of $2^n$ NFAs(each NFA ouput one component of the output vector). By enumerating all the inputs cases, we will obtain all recognized results, and all the NFAs will be certain. Therefore the example in the dataset consists of two parts, the input binary string and ouput binary vector, the corresponding target is the certained NFAs.
+
+So far we have the dataset, then consider training a model that can output a series of NFAs when inputting a pair of binary string and vector. If the cardinality $2^n$ is not very large, the Random Forest\cite{ho1995random} should be the best model, because it can predict results precisely. If the cardinality $2^n$ is extremely large, the Deep Neural Network\cite{goodfellow2016deep} should be the best model, because it can process the high-dimensional features.
+
 If using the Deep Neural Network, we can train the model by using the following SGD algorithm, where the $(Q', \Sigma', \delta', q', F') = f(\boldsymbol{x}; \boldsymbol{\theta})$ is the predict NFA and 
 \begin{equation*}
     \| f(\boldsymbol{x}; \boldsymbol{\theta}) - (Q, \Sigma, \delta, q, F) \| = 
@@ -76,7 +77,7 @@ If using the Deep Neural Network, we can train the model by using the following 
 \end{equation*}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{src/train_loop.pdf}
+    \includegraphics[width=1.0\linewidth]{src/train_loop.pdf}
     % \caption{ }
     \label{alg: train loop}
 \end{figure}
