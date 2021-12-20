@@ -48,7 +48,7 @@ The learning techniques are usually employed for inferring a formal model such a
 For instance, if we have permission to use a given software, but cannot view its source code. We can record the outputs of this software by trying a series of different inputs, then construct corresponding automata by using this technique. 
 
 
-However, such general problems are usually extremely difficult\cite{pacharoen2013active} so that we need to limit their range. Therefore, in the present paper, we discuss the method that can deduce an NFA with the simplest structure by learning the corresponding dataset. Fig. (\ref{fig: architecture}) demonstrates my idea, we can convert this problem to the typical question: \textbf{Generate the simplest automata that only accept a given series string.} If we require the automata to be a DFA, the question will be easy. However, such a solution may not be the best, because DFA usually has more finite states than its equivalent NFA. As we know, we can easily convert an NFA to a DFA by computing the closure, but hard to reduce the number of states by converting a DFA to an NFA. Although we can use the Myphill-Nerode Theorem\cite{nerode1958linear} to minimize DFA, we are going to explore the possibility of using machine learning methods.
+However, such general problems are usually extremely difficult\cite{pacharoen2013active} so that we need to limit their range. Therefore, in the present paper, we discuss the method that can deduce an NFA with the simplest structure by learning the corresponding dataset. Fig. (\ref{fig: architecture}) demonstrates my idea, we can convert this problem to the typical question: \textbf{Generate the simplest automata that only accept a given series string.} If we require the automata to be a DFA, the question will be easy. However, such a solution may not be the best, because DFA usually has more finite states than its equivalent NFA. As we know, we can easily convert an NFA to a DFA by computing the closure, but hard to reduce the number of states by converting a DFA to an NFA. Although we can use the Myphill-Nerode Theorem\cite{nerode1958linear} to minimize DFA, we are going to explore the possibility of using machine learning methods. In addition, the program is open source \href{https://github.com/ZhengLiCS/CSCI-610}{\color{cyan}https://github.com/ZhengLiCS/CSCI-610}.
 
 \section{Description of the idea}
 As we mentioned before, we need to convert the problem into a string recognition problem. Fig.(\ref{fig: architecture}) shows the method, we each pair of input and output of the black box, we convert 
@@ -82,7 +82,7 @@ If using the Deep Neural Network, we can train the model by using the following 
 \end{figure}
 
 \section{Analysis and evaluations}
-The address of our open-source program is , we list some results of the demo experiment below
+The address of our open-source program is \href{https://github.com/ZhengLiCS/CSCI-610}{\color{cyan}https://github.com/ZhengLiCS/CSCI-610}, we list some results of the demo experiment below
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{src/experiments.pdf}
